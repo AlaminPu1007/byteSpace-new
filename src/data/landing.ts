@@ -4,7 +4,13 @@ export const navLinks = [
   { label: "Creators", href: "#creators" },
 ];
 
-export const partnerLogos = ["Logoipsum", "Logoipsum", "Logoipsum", "Logoipsum", "Logoipsum"];
+export const partnerLogos = [
+  { src: "/images/partners/logo-1.png", width: 334, height: 82 },
+  { src: "/images/partners/logo-2.png", width: 336, height: 82 },
+  { src: "/images/partners/logo-3.png", width: 340, height: 82 },
+  { src: "/images/partners/logo-4.png", width: 340, height: 82 },
+  { src: "/images/partners/logo-5.png", width: 338, height: 84 },
+];
 
 export const courseCategories = [
   "Featured",

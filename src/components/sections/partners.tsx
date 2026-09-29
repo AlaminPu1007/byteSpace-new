@@ -1,18 +1,21 @@
+import Image from "next/image";
 import { Container } from "@/components/shared/container";
 import { partnerLogos } from "@/data/landing";
 
 export function Partners() {
   return (
-    <section className="bg-neutral-50 py-10 sm:py-14">
-      <Container className="grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-5">
-        {partnerLogos.map((name, i) => (
-          <div
-            key={i}
-            className="flex items-center justify-center gap-2 font-heading text-base font-medium text-neutral-400"
-          >
-            <span className="size-5 rounded-full border-2 border-neutral-400" />
-            {name}
-          </div>
+    <section className="bg-neutral-50 py-12 sm:py-16 lg:py-20">
+      <Container className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 lg:flex-nowrap lg:justify-between lg:gap-x-4">
+        {partnerLogos.map((logo) => (
+          <Image
+            key={logo.src}
+            src={logo.src}
+            alt="Partner logo"
+            // the exported files are @2x
+            width={logo.width / 2}
+            height={logo.height / 2}
+            className="h-auto w-[140px] sm:w-[150px] lg:w-[140px] xl:w-[167px]"
+          />
         ))}
       </Container>
     </section>
