@@ -159,6 +159,9 @@
   html {
     @apply font-sans;
   }
+  ::selection {
+    @apply bg-lime-500 text-neutral-950;
+  }
   h1, h2, h3, h4 {
     @apply font-heading font-semibold leading-[1.2];
   }

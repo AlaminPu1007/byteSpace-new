@@ -9,7 +9,7 @@ import { navLinks } from "@/data/landing";
 export function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 z-30 text-white">
-      <Container className="flex h-16 items-center justify-between sm:h-20">
+      <Container className="flex h-16 items-center justify-between sm:h-20 md:grid md:grid-cols-[1fr_auto_1fr]">
         <Logo />
 
         <nav className="hidden items-center gap-8 text-sm md:flex">
@@ -24,7 +24,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-5 text-sm md:flex">
+        <div className="hidden items-center gap-5 justify-self-end text-sm md:flex">
           <Link href="/login" className="hover:text-lime-500">Sign In</Link>
           <Link href="/signup" className="hover:text-lime-500">Join Us</Link>
           <button aria-label="Cart" className="hover:text-lime-500">

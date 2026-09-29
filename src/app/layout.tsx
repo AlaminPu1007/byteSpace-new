@@ -27,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
