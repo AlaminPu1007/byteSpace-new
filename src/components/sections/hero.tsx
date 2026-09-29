@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Search, Star } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { AvatarStack } from "@/components/shared/avatar-stack";
@@ -45,23 +46,15 @@ export function Hero() {
         <div className="relative mx-auto mt-12 h-[280px] w-full max-w-[900px] sm:mt-16 sm:h-[400px] lg:h-[450px]">
           <div className="absolute inset-x-0 bottom-0 top-0 rounded-t-full bg-lime-500" />
 
-          <svg
-            viewBox="0 0 320 400"
-            role="img"
-            aria-label="Smiling student holding a laptop"
-            className="absolute bottom-0 left-1/2 h-[95%] -translate-x-1/2"
-          >
-            <ellipse cx="160" cy="345" rx="150" ry="18" fill="#000" opacity=".08" />
-            <path d="M40 400c0-70 40-110 120-110s120 40 120 110z" fill="#5b8fc9" />
-            <path d="M110 300c10 30 90 30 100 0l20 100H90z" fill="#f4a3b5" />
-            <rect x="140" y="250" width="40" height="55" rx="18" fill="#f1b48d" />
-            <ellipse cx="160" cy="180" rx="62" ry="76" fill="#f1b48d" />
-            <path d="M92 175c-8-70 30-105 72-105s78 35 68 100c-10-30-30-52-70-52s-58 20-70 57z" fill="#5a2f22" />
-            <path d="M120 200q40 40 80 0" stroke="#fff" strokeWidth="9" fill="none" strokeLinecap="round" />
-            <path d="M92 190v-30M228 190v-30" stroke="#0b36a4" strokeWidth="16" strokeLinecap="round" />
-            <path d="M88 130c10-70 130-70 144 0" stroke="#0b36a4" strokeWidth="8" fill="none" />
-            <rect x="170" y="290" width="150" height="90" rx="8" fill="#3a3b3f" transform="rotate(-10 245 335)" />
-          </svg>
+          <Image
+            src="/images/hero/student.png"
+            alt="Smiling student holding a laptop"
+            width={1444}
+            height={1030}
+            priority
+            sizes="(min-width: 1024px) 640px, 90vw"
+            className="absolute bottom-0 left-1/2 w-[92%] max-w-[640px] -translate-x-1/2 sm:w-[72%]"
+          />
 
           <div className="absolute left-0 top-[28%] rounded-2xl bg-white px-4 py-3 text-neutral-950 shadow-lg sm:left-[10%]">
             <p className="text-xs font-medium sm:text-sm">UI/UX Design</p>
