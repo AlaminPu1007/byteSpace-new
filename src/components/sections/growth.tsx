@@ -1,7 +1,9 @@
-import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, Star } from "lucide-react";
 import { AvatarStack } from "@/components/shared/avatar-stack";
 import { Container } from "@/components/shared/container";
 import { CourseCard } from "@/components/shared/course-card";
+import { Glow } from "@/components/shared/glow";
 import { courses, learnerAvatars } from "@/data/courses";
 import { creatorPerks, stats } from "@/data/landing";
 
@@ -9,61 +11,204 @@ export function Growth() {
   return (
     <section
       id="creators"
-      className="bg-[radial-gradient(circle_at_10%_10%,var(--color-lime-100),transparent_40%),radial-gradient(circle_at_90%_60%,var(--color-brand-100),transparent_40%)] py-14 sm:py-20"
+      className="relative overflow-x-clip py-14 sm:pb-11 sm:pt-12"
     >
-      <Container className="space-y-16 lg:space-y-24">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+      {/* Positions follow the 1440 x 1460 design canvas */}
+      <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+        <Glow
+          color="#cbfc01"
+          opacity={0.4}
+          className="-left-[152px] -top-[466px]"
+        />
+        <Glow
+          color="#003be2"
+          opacity={0.08}
+          className="-right-[508px] -top-[458px]"
+        />
+        <Glow
+          color="#003be2"
+          opacity={0.16}
+          className="-left-[508px] top-[calc(51.5%-568px)]"
+        />
+        <Glow
+          color="#cbfc01"
+          opacity={0.35}
+          size={520}
+          className="-left-[260px] bottom-[-90px]"
+        />
+        <Glow
+          color="#003be2"
+          opacity={0.24}
+          className="-bottom-[465px] -right-[419px]"
+        />
+      </div>
+
+      <Container className="relative space-y-12 lg:space-y-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_596px] lg:gap-x-0">
           <div>
-            <h2 className="text-3xl sm:text-4xl">Your Path to Professional Growth Starts Here!</h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-neutral-500">
-              Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new career path entirely, we have the resources you need.
+            <h2 className="text-3xl sm:text-4xl lg:text-[40px]">
+              Your Path to Professional Growth Starts Here!
+            </h2>
+            <p className="mt-6 max-w-[480px] text-base leading-[1.6] text-neutral-500">
+              Explore our curated selection of courses tailored to enhance your
+              capabilities and accelerate your career journey. Whether you are
+              looking to sharpen specific skills, gain industry expertise, or
+              embark on a new career path entirely, we have the resources you
+              need.
             </p>
-            <dl className="mt-8 flex gap-10">
+            <dl className="mt-10 flex gap-12">
               {stats.map((s) => (
                 <div key={s.label}>
                   <dt className="sr-only">{s.label}</dt>
-                  <dd className="font-heading text-2xl font-semibold text-brand-700">{s.value}</dd>
-                  <p className="text-xs text-neutral-500">{s.label}</p>
+                  <dd className="font-heading text-[32px] font-semibold leading-[1.2] text-brand-800">
+                    {s.value}
+                  </dd>
+                  <p className="text-base text-neutral-500">{s.label}</p>
                 </div>
               ))}
             </dl>
           </div>
 
-          <div className="relative mx-auto w-full max-w-sm lg:ml-auto">
-            <CourseCard course={courses[0]} avatars={learnerAvatars.slice(0, 4)} />
-            <div className="absolute -right-2 bottom-16 rounded-xl bg-white p-3 shadow-lg sm:-right-8">
-              <p className="text-[10px] text-neutral-500">Learning Progress</p>
-              <p className="font-heading text-2xl font-semibold">55%</p>
+          {/* Laid out at design size on a 795x584 canvas, scaled down as one piece on small screens */}
+          <div className="relative mx-auto h-[calc(584px*var(--s))] w-[calc(596px*var(--s))] [--s:1] max-sm:[--s:0.55] max-[400px]:[--s:0.47]">
+            <div className="absolute left-[calc(-76px*var(--s))] top-0 h-[584px] w-[795px] origin-top-left scale-(--s)">
+              <div className="absolute left-[85px] top-[67px] w-[373px]">
+                <CourseCard
+                  course={courses[0]}
+                  avatars={learnerAvatars.slice(0, 4)}
+                />
+              </div>
+
+              <div
+                aria-hidden="true"
+                className="absolute left-[130px] top-[530px] h-[110px] w-[520px] rounded-full bg-neutral-950/25 blur-[36px]"
+              />
+
+              <Image
+                src="/images/hero/student.png"
+                alt="Smiling student with headphones holding a laptop"
+                width={710}
+                height={506}
+                className="pointer-events-none absolute left-[64px] top-[78px] max-w-none"
+                style={{
+                  maskImage:
+                    "linear-gradient(to bottom, #000 92%, transparent)",
+                }}
+              />
+
+              <div className="absolute left-[418px] top-[273px] w-[224px] rounded-[20px] bg-white p-4 shadow-[0_16px_40px_-14px_rgba(4,8,25,0.25)]">
+                <p className="text-[15px] leading-none text-neutral-950">
+                  Learning Progress
+                </p>
+                <p className="mt-2.5 font-heading text-[43px] font-semibold leading-[1.2] text-neutral-950">
+                  55%
+                </p>
+                <div className="mt-2.5 h-2 rounded-full bg-neutral-50">
+                  <div className="h-full w-[55%] rounded-full bg-lime-500" />
+                </div>
+              </div>
+
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[482px] top-[130px] size-[200px] bg-contain bg-no-repeat mask-contain mask-no-repeat"
+                style={{
+                  backgroundColor: "#d4fb20",
+                  backgroundImage: "url(/images/growth/squiggle.png)",
+                  backgroundBlendMode: "overlay",
+                  maskImage: "url(/images/growth/squiggle.png)",
+                }}
+              />
             </div>
           </div>
         </div>
 
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="relative mx-auto h-72 w-full max-w-sm rounded-3xl bg-gradient-to-br from-brand-100 to-brand-300 sm:h-96 lg:order-none">
-            <div className="absolute left-3 top-6 rounded-xl bg-brand-700 p-3 text-white shadow-lg">
-              <p className="text-[10px] text-white/70">Total Revenue</p>
-              <p className="font-heading text-lg font-semibold">$120.29</p>
-            </div>
-            <div className="absolute bottom-24 left-3 rounded-xl bg-white p-3 shadow-lg">
-              <p className="text-[10px] text-neutral-500">Year to Date</p>
-              <p className="font-heading text-lg font-semibold">$1,200.38</p>
-            </div>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-xl bg-white p-3 shadow-lg">
-              <p className="mb-2 text-xs font-medium">Happy Students</p>
-              <AvatarStack />
+        <div className="grid items-center gap-10 lg:grid-cols-[560px_1fr] lg:gap-x-[61px]">
+          {/* 560x723 design canvas, scaled as one piece on small screens */}
+          <div className="relative mx-auto h-[calc(723px*var(--s))] w-[calc(560px*var(--s))] [--s:1] max-sm:[--s:0.62] max-[400px]:[--s:0.5]">
+            <div className="absolute left-0 top-0 h-[723px] w-[560px] origin-top-left scale-(--s)">
+              <div className="absolute left-0 top-[50px] h-[119px] w-[250px] rounded-2xl bg-brand-800 p-4 text-white">
+                <p className="text-base leading-none">Total Revenue</p>
+                <p className="mt-0.5 text-[10px] leading-none text-white/70">
+                  July 1-28
+                </p>
+                <p className="mt-3 font-heading text-[28px] font-semibold leading-none">
+                  $120.29
+                </p>
+                <div className="mt-3 h-2 rounded-full bg-white/90">
+                  <div className="h-full w-[55%] rounded-full bg-lime-500" />
+                </div>
+              </div>
+
+              <div className="absolute left-0 top-[201px] h-[134px] w-[134px] rounded-2xl bg-brand-800 p-4 text-white">
+                <p className="text-base leading-none">Year to Date</p>
+                <p className="mt-0.5 text-[10px] leading-none text-white/70">
+                  2023
+                </p>
+                <p className="mt-3 font-heading text-[22px] font-semibold leading-none">
+                  $1,200.38
+                </p>
+                <span className="mt-3 inline-block rounded-full bg-lime-500 px-2 py-0.5 text-[11px] font-medium leading-4 text-neutral-950">
+                  +12$
+                </span>
+              </div>
+
+              <Image
+                src="/images/growth/creator.png"
+                alt="Smiling creator with headphones holding a tablet"
+                width={582}
+                height={723}
+                className="pointer-events-none absolute left-[5px] top-0 max-w-none"
+              />
+
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[300px] top-[121px] size-[220px] rotate-45 bg-contain bg-no-repeat mask-contain mask-no-repeat"
+                style={{
+                  backgroundColor: "#d4fb20",
+                  backgroundImage: "url(/images/growth/squiggle.png)",
+                  backgroundBlendMode: "overlay",
+                  maskImage: "url(/images/growth/squiggle.png)",
+                }}
+              />
+
+              <div className="absolute left-[284px] top-[420px] h-[122px] w-[256px] rounded-[20px] bg-white p-4 shadow-[0_16px_40px_-14px_rgba(4,8,25,0.2)]">
+                <p className="text-base leading-none text-neutral-950 font-semibold">
+                  Happy Students
+                </p>
+                <p className="mt-1.5 flex items-center gap-1 text-[11px] leading-none text-neutral-950">
+                  <span className="font-medium">4.5</span>
+                  <span className="text-neutral-400">(240)</span>
+                  <Star className="size-3 fill-lime-500 text-lime-500" />
+                </p>
+                <AvatarStack
+                  images={[
+                    ...learnerAvatars,
+                    learnerAvatars[0],
+                    learnerAvatars[2],
+                  ]}
+                  count={8}
+                  extra="2K+"
+                  size="xl"
+                  className="mt-3"
+                />
+              </div>
             </div>
           </div>
 
-          <div className="lg:pl-10">
-            <h2 className="text-3xl sm:text-4xl">Create &amp; Manage Courses Easily.</h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-neutral-500">
-              ByteSpace supports individuals or entities in the creation, publication, and administration of educational courses.
+          <div>
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px]">
+              Create &amp; Manage Courses Easily.
+            </h2>
+            <p className="mt-6 max-w-[560px] text-base leading-[1.6] text-neutral-500 sm:text-lg">
+              <span className="font-semibold text-neutral-950">ByteSpace</span>{" "}
+              supports individuals or entities in the creation, publication, and
+              administration of educational courses.
             </p>
-            <ul className="mt-6 space-y-3 text-sm">
+            <ul className="mt-8 space-y-3 text-base text-neutral-950 sm:text-lg">
               {creatorPerks.map((perk) => (
-                <li key={perk} className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 fill-brand-700 text-white" />
-                  {perk}
+                <li key={perk} className="flex items-center gap-3">
+                  <CheckCircle2 className="size-5 fill-brand-800 text-white" />
+                  <p className="font-medium">{perk}</p>
                 </li>
               ))}
             </ul>
