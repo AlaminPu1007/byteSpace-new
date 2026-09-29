@@ -31,37 +31,15 @@ export const courseCategories = [
   "Web Development",
   "Data Science",
   "Cooking",
-];
-
-export type Course = {
-  id: string;
-  title: string;
-  author: string;
-  rating: number;
-  level: string;
-  price: number;
-  lessons: number;
-  duration: string;
-  comments: number;
-  tone: string;
-};
-
-export const courses: Course[] = [
-  { id: "figma", title: "Learn Figma from Basic", author: "pixelperf studio", rating: 4.5, level: "Beginner", price: 25, lessons: 17, duration: "2 hours 16 mins", comments: 69, tone: "from-sky-200 to-indigo-300" },
-  { id: "digital-asset", title: "Build Digital Asset", author: "pixelperf studio", rating: 4.5, level: "Beginner", price: 25, lessons: 17, duration: "2 hours 16 mins", comments: 69, tone: "from-neutral-200 to-neutral-400" },
-  { id: "big-data", title: "The Power of Big Data", author: "pixelperf studio", rating: 4.5, level: "Beginner", price: 25, lessons: 17, duration: "2 hours 16 mins", comments: 69, tone: "from-slate-700 to-slate-900" },
-  { id: "productivity", title: "Balancing Productivity and Life", author: "pixelperf studio", rating: 4.5, level: "Beginner", price: 25, lessons: 17, duration: "2 hours 16 mins", comments: 69, tone: "from-zinc-300 to-zinc-500" },
-  { id: "money", title: "Mastering Money Management", author: "pixelperf studio", rating: 4.5, level: "Beginner", price: 25, lessons: 17, duration: "2 hours 16 mins", comments: 69, tone: "from-emerald-100 to-teal-300" },
-  { id: "startup", title: "From Idea to Startup Success", author: "pixelperf studio", rating: 4.5, level: "Beginner", price: 25, lessons: 17, duration: "2 hours 16 mins", comments: 69, tone: "from-amber-100 to-orange-300" },
-];
+] as const;
 
 export const learningPaths = [
-  { label: "Design", icon: "PenTool" },
-  { label: "Development", icon: "Code" },
-  { label: "IT & Software", icon: "Laptop" },
-  { label: "Business", icon: "Briefcase" },
-  { label: "Marketing", icon: "Megaphone" },
-  { label: "Photography", icon: "Camera" },
+  { label: "Design", icon: "/images/paths/design.png" },
+  { label: "Development", icon: "/images/paths/development.png" },
+  { label: "IT & Software", icon: "/images/paths/it-software.png" },
+  { label: "Business", icon: "/images/paths/business.png" },
+  { label: "Marketing", icon: "/images/paths/marketing.png" },
+  { label: "Photography", icon: "/images/paths/photography.png" },
 ] as const;
 
 export const stats = [

@@ -2,7 +2,8 @@ import { CheckCircle2 } from "lucide-react";
 import { AvatarStack } from "@/components/shared/avatar-stack";
 import { Container } from "@/components/shared/container";
 import { CourseCard } from "@/components/shared/course-card";
-import { courses, creatorPerks, stats } from "@/data/landing";
+import { courses, learnerAvatars } from "@/data/courses";
+import { creatorPerks, stats } from "@/data/landing";
 
 export function Growth() {
   return (
@@ -29,7 +30,7 @@ export function Growth() {
           </div>
 
           <div className="relative mx-auto w-full max-w-sm lg:ml-auto">
-            <CourseCard course={courses[0]} />
+            <CourseCard course={courses[0]} avatars={learnerAvatars.slice(0, 4)} />
             <div className="absolute -right-2 bottom-16 rounded-xl bg-white p-3 shadow-lg sm:-right-8">
               <p className="text-[10px] text-neutral-500">Learning Progress</p>
               <p className="font-heading text-2xl font-semibold">55%</p>
