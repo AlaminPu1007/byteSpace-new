@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Container } from "@/components/shared/container";
 import { CourseCard } from "@/components/shared/course-card";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -8,7 +8,6 @@ import { getCoursesByCategory, learnerAvatars, type Category } from "@/data/cour
 import { courseCategories } from "@/data/landing";
 import { cn } from "@/lib/utils";
 
-// Row breaks follow the design: 8 / 6 / the rest
 const categoryRows = [
   courseCategories.slice(0, 8),
   courseCategories.slice(8, 14),
@@ -28,12 +27,10 @@ export function CourseExplorer() {
           description="At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life."
         />
 
-        <div className="mt-8 flex flex-col items-center gap-y-3 sm:gap-y-[22px]">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-x-4 gap-y-3 lg:gap-y-4">
           {categoryRows.map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3 sm:gap-x-4"
-            >
+            <Fragment key={rowIndex}>
+              {rowIndex > 0 && <span aria-hidden="true" className="hidden h-0 basis-full xl:block" />}
               {row.map((name) => (
                 <button
                   key={name}
@@ -58,11 +55,10 @@ export function CourseExplorer() {
                   + More
                 </button>
               )}
-            </div>
+            </Fragment>
           ))}
         </div>
 
-        {/* Re-keyed on category so the cards re-mount and replay the entrance animation */}
         <div
           key={active}
           role="tabpanel"

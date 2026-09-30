@@ -1,4 +1,4 @@
-﻿# ByteSpace New
+# ByteSpace New
 
 Online course marketplace landing page built with Next.js, TypeScript, Tailwind CSS and shadcn/ui.
 
@@ -6,7 +6,6 @@ Online course marketplace landing page built with Next.js, TypeScript, Tailwind 
 
 ```bash
 pnpm install
-cp .env.example .env.local
 pnpm dev
 ```
 

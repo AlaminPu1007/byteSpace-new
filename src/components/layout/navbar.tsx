@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Menu, ShoppingBag } from "lucide-react";
 import { Container } from "@/components/shared/container";
@@ -5,10 +7,19 @@ import { Logo } from "@/components/shared/logo";
 import { buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { navLinks } from "@/data/landing";
+import { useScrolled } from "@/hooks/use-scrolled";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
+  const scrolled = useScrolled();
+
   return (
-    <header className="absolute inset-x-0 top-0 z-30 text-white">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 text-white transition-[background-color,box-shadow,backdrop-filter] duration-300",
+        scrolled && "bg-brand-800/75 shadow-[0_8px_30px_-12px_rgba(4,8,25,0.5)] backdrop-blur-lg",
+      )}
+    >
       <Container className="flex h-16 items-center justify-between sm:h-20 md:grid md:grid-cols-[1fr_auto_1fr]">
         <Logo />
 

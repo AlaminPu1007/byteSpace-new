@@ -1,12 +1,11 @@
-import Image from "next/image";
 import { Star } from "lucide-react";
+import { FadeImage } from "@/components/shared/fade-image";
 import { AvatarStack } from "@/components/shared/avatar-stack";
 import { cn } from "@/lib/utils";
 import type { Course } from "@/data/courses";
 
 type Props = {
   course: Course;
-  /** Photos for the learner stack */
   avatars: string[];
   className?: string;
 };
@@ -28,23 +27,24 @@ export function CourseCard({ course, avatars, className }: Props) {
   return (
     <article
       className={cn(
-        "@container h-full rounded-[24px] border border-neutral-100 bg-white p-4 transition-shadow duration-300 hover:shadow-[0_12px_32px_-12px_rgba(4,8,25,0.18)]",
+        "@container group/card h-full rounded-[24px] border border-neutral-100 bg-white p-4 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_-12px_rgba(4,8,25,0.18)]",
         className,
       )}
     >
-      <div className="relative aspect-[341/195] overflow-hidden rounded-[20px] bg-neutral-100">
-        <Image
+      <div className="relative aspect-[341/195] animate-pulse overflow-hidden rounded-[20px] bg-neutral-100 has-[img.opacity-100]:animate-none">
+        <FadeImage
           src={course.image}
           alt={course.title}
           fill
           sizes="(min-width: 1024px) 352px, (min-width: 640px) 45vw, 100vw"
-          className="object-cover"
+          quality={70}
+          className="object-cover transition-transform duration-500 group-hover/card:scale-105"
         />
         <div className="absolute inset-x-[13px] bottom-[19px] flex justify-between gap-1">
           {stats.map((label) => (
             <span
               key={label}
-              className="flex h-[26px] items-center whitespace-nowrap rounded-full bg-[#f6f6f6]/60 px-2 text-[11px] text-neutral-700 backdrop-blur-md @[300px]:px-3 @[300px]:text-xs"
+              className="flex h-[26px] items-center whitespace-nowrap rounded-full bg-[#f6f6f6]/60 px-1.5 text-[10px] text-neutral-700 backdrop-blur-md @[320px]:px-2 @[320px]:text-[11px] @[350px]:px-3 @[350px]:text-xs"
             >
               {label}
             </span>

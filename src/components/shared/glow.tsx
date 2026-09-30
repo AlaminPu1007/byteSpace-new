@@ -1,21 +1,17 @@
 import { cn } from "@/lib/utils";
 
 type Props = {
-  /** Centre colour of the glow, e.g. "#cbfc01" (lime) or "#003be2" (brand blue) */
   color?: string;
-  /** Overall strength, 0 to 1 */
   opacity?: number;
-  /** Diameter in px */
   size?: number;
   className?: string;
 };
 
-// Soft radial ellipse from the design: solid centre fading out at 53%, 75% and 100%
 export function Glow({ color = "#cbfc01", opacity = 0.4, size = 1137, className }: Props) {
   return (
     <div
       aria-hidden="true"
-      className={cn("pointer-events-none absolute rounded-full blur-[20px]", className)}
+      className={cn("pointer-events-none absolute rounded-full", className)}
       style={{
         width: size,
         height: size,
