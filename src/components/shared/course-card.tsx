@@ -28,7 +28,7 @@ export function CourseCard({ course, avatars, className }: Props) {
   return (
     <article
       className={cn(
-        "@container h-full rounded-[24px] border border-neutral-100 bg-white p-4 transition-shadow duration-300 hover:shadow-[0_12px_32px_-12px_rgba(4,8,25,0.18)]",
+        "@container group/card h-full rounded-[24px] border border-neutral-100 bg-white p-4 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_-12px_rgba(4,8,25,0.18)]",
         className,
       )}
     >
@@ -38,7 +38,7 @@ export function CourseCard({ course, avatars, className }: Props) {
           alt={course.title}
           fill
           sizes="(min-width: 1024px) 352px, (min-width: 640px) 45vw, 100vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-500 group-hover/card:scale-105"
         />
         <div className="absolute inset-x-[13px] bottom-[19px] flex justify-between gap-1">
           {stats.map((label) => (

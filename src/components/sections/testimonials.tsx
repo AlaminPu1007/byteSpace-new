@@ -24,7 +24,7 @@ export function Testimonials() {
 
         <div className="mt-10 grid auto-rows-fr items-stretch gap-6 md:grid-cols-2 lg:mt-[72px] lg:grid-cols-3 lg:gap-10">
           {testimonials.map((t) => (
-            <figure key={t.name} className="rounded-[32px] max-md:text-center border border-neutral-100 bg-white p-6 shadow-[0_12px_40px_-8px_rgba(4,8,25,0.12)]">
+            <figure key={t.name} className="rounded-[32px] transition-transform duration-300 hover:-translate-y-1.5 max-md:text-center border border-neutral-100 bg-white p-6 shadow-[0_12px_40px_-8px_rgba(4,8,25,0.12)]">
               <Image
                 src={t.image}
                 alt={t.name}

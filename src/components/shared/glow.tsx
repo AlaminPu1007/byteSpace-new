@@ -10,12 +10,14 @@ type Props = {
   className?: string;
 };
 
-// Soft radial ellipse from the design: solid centre fading out at 53%, 75% and 100%
+// Soft radial ellipse from the design: solid centre fading out at 53%, 75% and 100%.
+// The gradient already feathers the edge, so no CSS blur is used: a blurred 1000px layer is
+// expensive to repaint while scrolling.
 export function Glow({ color = "#cbfc01", opacity = 0.4, size = 1137, className }: Props) {
   return (
     <div
       aria-hidden="true"
-      className={cn("pointer-events-none absolute rounded-full blur-[20px]", className)}
+      className={cn("pointer-events-none absolute rounded-full", className)}
       style={{
         width: size,
         height: size,

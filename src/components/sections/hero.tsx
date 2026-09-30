@@ -33,24 +33,29 @@ export function Hero() {
 
       <Container className="relative">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl sm:text-6xl lg:text-[72px]">
+          <h1 className="animate-[rise_0.8s_ease-out_both] text-4xl sm:text-6xl lg:text-[72px]">
             Get Access to Hundreds Courses Available
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-sm text-white/90 sm:text-base lg:mt-10 lg:max-w-none">
-            Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
+          <p className="mx-auto mt-6 max-w-2xl animate-[rise_0.8s_ease-out_0.15s_both] text-sm text-white/90 sm:text-base lg:mt-10 lg:max-w-none">
+            Unlock your creativity, gain valuable knowledge, and grow your
+            business with our wide range of courses.
           </p>
 
-          <ResetForm className="mx-auto mt-8 flex max-w-[581px] items-start gap-4 lg:mt-14">
+          <ResetForm className="mx-auto mt-8 animate-[rise_0.8s_ease-out_0.3s_both] flex max-w-[581px] items-start gap-4 lg:mt-14">
             <div className="flex h-12 flex-1 items-center gap-3 rounded-full bg-white px-4 sm:h-[52px] sm:px-5">
               <Search className="size-5 shrink-0 text-neutral-500" />
               <Input
                 type="search"
                 placeholder="Course, topic, creator"
                 aria-label="Search courses"
-                className="h-full border-0 bg-transparent px-0 text-neutral-900 shadow-none focus-visible:ring-0"
+                className="h-full border-0 text-sm lg:text-base bg-transparent px-0 text-neutral-900 shadow-none focus-visible:ring-0"
               />
             </div>
-            <Button type="submit" variant="secondary" className="h-11 rounded-full px-6 text-base sm:h-[46px]">
+            <Button
+              type="submit"
+              variant="secondary"
+              className="h-11 rounded-full px-6 text-base sm:h-[46px]"
+            >
               Search
             </Button>
           </ResetForm>
@@ -75,32 +80,41 @@ export function Hero() {
             height={1030}
             priority
             sizes="(min-width: 1149px) 840px, 73vw"
-            className="absolute left-[18.1%] top-[-17.4%] w-[70%] max-w-none"
+            className="absolute left-[18.1%] top-[-17.4%] w-[70%] max-w-none will-change-transform animate-[pop_0.9s_ease-out_0.35s_both]"
           />
         </div>
 
         {/* UI/UX card */}
-        <div className="absolute left-[21%] top-[12%] hidden rounded-2xl bg-white px-4 py-3 text-neutral-950 shadow-lg sm:block lg:px-5 lg:py-4">
+        <div className="absolute left-[21%] top-[12%] hidden will-change-transform animate-[rise_0.8s_ease-out_0.8s_both,float_6s_ease-in-out_1.6s_infinite] rounded-2xl bg-white px-4 py-3 text-neutral-950 shadow-lg sm:block lg:px-5 lg:py-4">
           <p className="text-sm font-medium lg:text-base">UI/UX Design</p>
-          <p className="text-xs text-neutral-500">200 Courses &middot; 1000+ Students</p>
+          <p className="text-xs text-neutral-500">
+            200 Courses &middot; 1000+ Students
+          </p>
         </div>
 
         {/* Learning progress card */}
-        <div className="absolute right-2 top-[6%] w-36 rounded-2xl bg-white p-3 text-neutral-950 shadow-lg sm:left-[59%] sm:right-auto sm:top-[15%] sm:w-44 sm:p-4 lg:w-[231px] lg:p-5">
+        <div className="absolute right-2 top-[6%] will-change-transform animate-[rise_0.8s_ease-out_0.95s_both,float_7s_ease-in-out_1.75s_infinite] w-36 rounded-2xl bg-white p-3 text-neutral-950 shadow-lg sm:left-[59%] sm:right-auto sm:top-[15%] sm:w-44 sm:p-4 lg:w-[231px] lg:p-5">
           <p className="text-xs sm:text-sm">Learning Progress</p>
-          <p className="mt-1 font-heading text-3xl font-semibold sm:text-4xl lg:text-[56px] lg:leading-tight">55%</p>
+          <p className="mt-1 font-heading text-3xl font-semibold sm:text-4xl lg:text-[56px] lg:leading-tight">
+            55%
+          </p>
           <div className="mt-2 h-2 rounded-full bg-neutral-100 lg:mt-3">
             <div className="h-full w-[55%] rounded-full bg-lime-500" />
           </div>
         </div>
 
         {/* Happy students card */}
-        <div className="absolute bottom-4 left-2 rounded-2xl bg-white p-3 text-neutral-950 shadow-lg sm:bottom-auto sm:left-[14.5%] sm:top-[57%] sm:p-4 lg:p-5">
+        <div className="absolute bottom-4 left-2 will-change-transform animate-[rise_0.8s_ease-out_1.1s_both,float_5.5s_ease-in-out_1.9s_infinite] rounded-2xl bg-white p-3 text-neutral-950 shadow-lg sm:bottom-auto sm:left-[14.5%] sm:top-[57%] sm:p-4 lg:p-5">
           <p className="text-sm font-medium lg:text-base">Happy Students</p>
           <p className="mb-2 flex items-center gap-1 text-xs text-neutral-500">
             4.5 (240) <Star className="size-3.5 fill-lime-500 text-lime-500" />
           </p>
-          <AvatarStack size="lg" count={6} extra="2K+" images={learnerAvatars} />
+          <AvatarStack
+            size="lg"
+            count={6}
+            extra="2K+"
+            images={learnerAvatars}
+          />
         </div>
       </div>
     </section>

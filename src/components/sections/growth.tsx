@@ -5,6 +5,7 @@ import { Container } from "@/components/shared/container";
 import { CourseCard } from "@/components/shared/course-card";
 import { Glow } from "@/components/shared/glow";
 import { courses, learnerAvatars } from "@/data/courses";
+import { CountUp } from "@/components/shared/count-up";
 import { creatorPerks, stats } from "@/data/landing";
 
 export function Growth() {
@@ -61,7 +62,7 @@ export function Growth() {
                 <div key={s.label}>
                   <dt className="sr-only">{s.label}</dt>
                   <dd className="font-heading text-[32px] font-semibold leading-[1.2] text-brand-800">
-                    {s.value}
+                    <CountUp value={s.value} />
                   </dd>
                   <p className="text-base text-neutral-500">{s.label}</p>
                 </div>
@@ -96,7 +97,7 @@ export function Growth() {
                 }}
               />
 
-              <div className="absolute left-[418px] top-[273px] w-[224px] rounded-[20px] bg-white p-4 shadow-[0_16px_40px_-14px_rgba(4,8,25,0.25)]">
+              <div className="absolute left-[418px] top-[273px] w-[224px] animate-[float_6s_ease-in-out_infinite] rounded-[20px] bg-white p-4 shadow-[0_16px_40px_-14px_rgba(4,8,25,0.25)]">
                 <p className="text-[15px] leading-none text-neutral-950">
                   Learning Progress
                 </p>
@@ -110,7 +111,7 @@ export function Growth() {
 
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute left-[482px] top-[130px] size-[200px] bg-contain bg-no-repeat mask-contain mask-no-repeat"
+                className="pointer-events-none absolute left-[482px] top-[130px] size-[200px] animate-[float_7s_ease-in-out_0.5s_infinite] bg-contain bg-no-repeat mask-contain mask-no-repeat"
                 style={{
                   backgroundColor: "#d4fb20",
                   backgroundImage: "url(/images/growth/squiggle.png)",
@@ -162,7 +163,7 @@ export function Growth() {
 
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute left-[300px] top-[121px] size-[220px] rotate-45 bg-contain bg-no-repeat mask-contain mask-no-repeat"
+                className="pointer-events-none absolute left-[300px] top-[121px] size-[220px] rotate-45 animate-[float_8s_ease-in-out_infinite] bg-contain bg-no-repeat mask-contain mask-no-repeat"
                 style={{
                   backgroundColor: "#d4fb20",
                   backgroundImage: "url(/images/growth/squiggle.png)",
