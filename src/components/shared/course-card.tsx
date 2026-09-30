@@ -44,7 +44,7 @@ export function CourseCard({ course, avatars, className }: Props) {
           {stats.map((label) => (
             <span
               key={label}
-              className="flex h-[26px] items-center whitespace-nowrap rounded-full bg-[#f6f6f6]/60 px-2 text-[11px] text-neutral-700 backdrop-blur-md @[300px]:px-3 @[300px]:text-xs"
+              className="flex h-[26px] items-center whitespace-nowrap rounded-full bg-[#f6f6f6]/60 px-1.5 text-[10px] text-neutral-700 backdrop-blur-md @[320px]:px-2 @[320px]:text-[11px] @[350px]:px-3 @[350px]:text-xs"
             >
               {label}
             </span>

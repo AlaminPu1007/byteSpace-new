@@ -17,7 +17,7 @@ export function LearningPaths() {
           {learningPaths.map(({ label, icon }) => (
             <li
               key={label}
-              className="flex flex-col items-center justify-center gap-5 rounded-[24px] border border-neutral-200 bg-white px-3 py-8 text-center font-sans text-lg font-medium leading-[1.2] text-neutral-950 transition-shadow hover:shadow-md sm:text-xl lg:aspect-square lg:py-0"
+              className="flex flex-col items-center justify-center gap-5 rounded-[24px] border border-neutral-200 bg-white px-3 py-8 text-center font-sans text-lg font-medium leading-[1.2] text-neutral-950 transition-shadow hover:shadow-md sm:text-xl lg:aspect-square lg:justify-start lg:py-0 lg:pt-[calc(50%-55px)] lg:max-xl:text-base"
             >
               <span className="grid size-[66px] place-items-center rounded-full bg-lime-400">
                 <Image src={icon} alt="" width={36} height={36} />

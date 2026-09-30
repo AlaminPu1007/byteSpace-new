@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Container } from "@/components/shared/container";
 import { CourseCard } from "@/components/shared/course-card";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -28,12 +28,11 @@ export function CourseExplorer() {
           description="At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life."
         />
 
-        <div className="mt-8 flex flex-col items-center gap-y-3 sm:gap-y-[22px]">
+        {/* One wrapping list so pills fill each row; on desktop the breaks follow the design rows */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-x-4 gap-y-3 lg:gap-y-4">
           {categoryRows.map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3 sm:gap-x-4"
-            >
+            <Fragment key={rowIndex}>
+              {rowIndex > 0 && <span aria-hidden="true" className="hidden h-0 basis-full xl:block" />}
               {row.map((name) => (
                 <button
                   key={name}
@@ -58,7 +57,7 @@ export function CourseExplorer() {
                   + More
                 </button>
               )}
-            </div>
+            </Fragment>
           ))}
         </div>
 

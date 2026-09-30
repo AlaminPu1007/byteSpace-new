@@ -3,6 +3,7 @@ import { Search, Star } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { AvatarStack } from "@/components/shared/avatar-stack";
 import { Container } from "@/components/shared/container";
+import { ResetForm } from "@/components/shared/reset-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -38,7 +39,7 @@ export function Hero() {
             Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
           </p>
 
-          <form className="mx-auto mt-8 flex max-w-[581px] items-start gap-4 lg:mt-14">
+          <ResetForm className="mx-auto mt-8 flex max-w-[581px] items-start gap-4 lg:mt-14">
             <div className="flex h-12 flex-1 items-center gap-3 rounded-full bg-white px-4 sm:h-[52px] sm:px-5">
               <Search className="size-5 shrink-0 text-neutral-500" />
               <Input
@@ -51,7 +52,7 @@ export function Hero() {
             <Button type="submit" variant="secondary" className="h-11 rounded-full px-6 text-base sm:h-[46px]">
               Search
             </Button>
-          </form>
+          </ResetForm>
         </div>
       </Container>
 
