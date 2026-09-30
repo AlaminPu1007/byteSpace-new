@@ -14,6 +14,7 @@ export function Partners() {
             width={logo.width / 2}
             height={logo.height / 2}
             className="h-auto w-[140px] sm:w-[150px] lg:w-[140px] xl:w-[167px]"
+            style={{ height: "auto" }}
           />
         ))}
       </Container>
