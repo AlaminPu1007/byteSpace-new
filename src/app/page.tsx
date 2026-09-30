@@ -6,18 +6,33 @@ import { Hero } from "@/components/sections/hero";
 import { LearningPaths } from "@/components/sections/learning-paths";
 import { Partners } from "@/components/sections/partners";
 import { Testimonials } from "@/components/sections/testimonials";
+import { Reveal } from "@/components/shared/reveal";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Partners />
-      <CourseExplorer />
-      <LearningPaths />
-      <Growth />
-      <CreatorCta />
-      <Testimonials />
+      <Reveal>
+        <Partners />
+      </Reveal>
+      <Reveal>
+        <CourseExplorer />
+      </Reveal>
+      <Reveal>
+        <LearningPaths />
+      </Reveal>
+      <Reveal>
+        <Growth />
+      </Reveal>
+      <Reveal>
+        <CreatorCta />
+      </Reveal>
+      <Reveal>
+        <Testimonials />
+      </Reveal>
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }

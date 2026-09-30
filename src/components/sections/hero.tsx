@@ -6,6 +6,7 @@ import { Container } from "@/components/shared/container";
 import { ResetForm } from "@/components/shared/reset-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { learnerAvatars } from "@/data/courses";
 
 export function Hero() {
   return (
@@ -99,7 +100,7 @@ export function Hero() {
           <p className="mb-2 flex items-center gap-1 text-xs text-neutral-500">
             4.5 (240) <Star className="size-3.5 fill-lime-500 text-lime-500" />
           </p>
-          <AvatarStack size="lg" count={6} extra="2K+" />
+          <AvatarStack size="lg" count={6} extra="2K+" images={learnerAvatars} />
         </div>
       </div>
     </section>

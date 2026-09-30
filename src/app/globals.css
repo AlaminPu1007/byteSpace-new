@@ -157,7 +157,10 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
+  }
+  section[id] {
+    scroll-margin-top: 5rem;
   }
   ::selection {
     @apply bg-lime-500 text-neutral-950;
