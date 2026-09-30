@@ -6,12 +6,6 @@ type Props = {
   className?: string;
 };
 
-/**
- * Decorative 3D ornaments for the blue banner sections.
- * The artwork keeps its ornaments in the left and right corners, so each half
- * is cropped from its own edge. This keeps them pinned to the corners and at
- * the design's scale on any banner width or height.
- */
 export function Blobs({ src = "/images/cta/ornaments.png", className }: Props) {
   const half = "absolute inset-y-0 w-1/2 overflow-hidden";
 

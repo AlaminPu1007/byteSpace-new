@@ -1,12 +1,11 @@
-import Image from "next/image";
 import { Star } from "lucide-react";
+import { FadeImage } from "@/components/shared/fade-image";
 import { AvatarStack } from "@/components/shared/avatar-stack";
 import { cn } from "@/lib/utils";
 import type { Course } from "@/data/courses";
 
 type Props = {
   course: Course;
-  /** Photos for the learner stack */
   avatars: string[];
   className?: string;
 };
@@ -32,12 +31,13 @@ export function CourseCard({ course, avatars, className }: Props) {
         className,
       )}
     >
-      <div className="relative aspect-[341/195] overflow-hidden rounded-[20px] bg-neutral-100">
-        <Image
+      <div className="relative aspect-[341/195] animate-pulse overflow-hidden rounded-[20px] bg-neutral-100 has-[img.opacity-100]:animate-none">
+        <FadeImage
           src={course.image}
           alt={course.title}
           fill
           sizes="(min-width: 1024px) 352px, (min-width: 640px) 45vw, 100vw"
+          quality={70}
           className="object-cover transition-transform duration-500 group-hover/card:scale-105"
         />
         <div className="absolute inset-x-[13px] bottom-[19px] flex justify-between gap-1">

@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/**
- * Default variant uses the exported logo (white wordmark) for dark backgrounds.
- * The `dark` variant is for light backgrounds, where the white wordmark would disappear.
- */
 export function Logo({ className, dark }: { className?: string; dark?: boolean }) {
   if (!dark) {
     return (

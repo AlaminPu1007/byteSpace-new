@@ -11,7 +11,6 @@ export function Partners() {
             key={logo.src}
             src={logo.src}
             alt="Partner logo"
-            // the exported files are @2x
             width={logo.width / 2}
             height={logo.height / 2}
             className="h-auto w-[140px] sm:w-[150px] lg:w-[140px] xl:w-[167px]"

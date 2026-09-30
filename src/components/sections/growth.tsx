@@ -14,7 +14,6 @@ export function Growth() {
       id="creators"
       className="relative overflow-x-clip py-14 sm:pb-11 sm:pt-12"
     >
-      {/* Positions follow the 1440 x 1460 design canvas */}
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
         <Glow
           color="#cbfc01"
@@ -70,7 +69,6 @@ export function Growth() {
             </dl>
           </div>
 
-          {/* Laid out at design size on a 795x584 canvas, scaled down as one piece on small screens */}
           <div className="relative mx-auto h-[calc(584px*var(--s))] w-[calc(596px*var(--s))]">
             <div className="absolute left-[calc(-76px*var(--s))] top-0 h-[584px] w-[795px] origin-top-left scale-(--s)">
               <div className="absolute left-[85px] top-[67px] w-[373px]">
@@ -124,7 +122,6 @@ export function Growth() {
         </div>
 
         <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-10 [--s:0.45] min-[360px]:[--s:0.5] min-[400px]:[--s:0.62] sm:[--s:1] lg:[--s:0.75] xl:[--s:1] lg:grid-cols-[calc(560px*var(--s))_minmax(0,1fr)] lg:gap-x-10 xl:gap-x-[61px]">
-          {/* 560x723 design canvas, scaled as one piece on small screens */}
           <div className="relative mx-auto h-[calc(723px*var(--s))] w-[calc(560px*var(--s))]">
             <div className="absolute left-0 top-0 h-[723px] w-[560px] origin-top-left scale-(--s)">
               <div className="absolute left-0 top-[50px] h-[119px] w-[250px] rounded-2xl bg-brand-800 p-4 text-white">

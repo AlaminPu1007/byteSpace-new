@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { FadeImage } from "@/components/shared/fade-image";
 import { Container } from "@/components/shared/container";
 import { Glow } from "@/components/shared/glow";
 import { testimonials } from "@/data/landing";
@@ -25,13 +25,15 @@ export function Testimonials() {
         <div className="mt-10 grid auto-rows-fr items-stretch gap-6 md:grid-cols-2 lg:mt-[72px] lg:grid-cols-3 lg:gap-10">
           {testimonials.map((t) => (
             <figure key={t.name} className="rounded-[32px] transition-transform duration-300 hover:-translate-y-1.5 max-md:text-center border border-neutral-100 bg-white p-6 shadow-[0_12px_40px_-8px_rgba(4,8,25,0.12)]">
-              <Image
-                src={t.image}
-                alt={t.name}
-                width={160}
-                height={160}
-                className="size-20 rounded-full object-cover max-md:mx-auto"
-              />
+              <span className="relative block size-20 animate-pulse overflow-hidden rounded-full bg-neutral-100 has-[img.opacity-100]:animate-none max-md:mx-auto">
+                <FadeImage
+                  src={t.image}
+                  alt={t.name}
+                  width={160}
+                  height={160}
+                  className="size-full object-cover"
+                />
+              </span>
               <figcaption className="mt-6">
                 <p className="font-heading text-xl font-semibold leading-[1.2] text-[#040819]">{t.name}</p>
                 <p className="mt-1 text-lg leading-7 text-brand-800">{t.role}</p>

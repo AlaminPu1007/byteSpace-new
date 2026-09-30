@@ -8,7 +8,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-/** Full-height blue screen shared by the 404 and error pages. */
 export function StatusScreen({ code, title, description, children }: Props) {
   return (
     <main className="relative flex min-h-screen flex-col overflow-hidden bg-brand-800 text-white">

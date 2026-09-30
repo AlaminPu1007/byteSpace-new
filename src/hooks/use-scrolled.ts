@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-/** True once the page has been scrolled past `offset` px. */
 export function useScrolled(offset = 16) {
   const [scrolled, setScrolled] = useState(false);
 

@@ -4,7 +4,6 @@ import { ArrowUp } from "lucide-react";
 import { useScrolled } from "@/hooks/use-scrolled";
 import { cn } from "@/lib/utils";
 
-/** Floating button that appears after the first screen and scrolls back to the top. */
 export function ScrollToTop() {
   const visible = useScrolled(500);
 

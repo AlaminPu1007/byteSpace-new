@@ -11,13 +11,11 @@ import { learnerAvatars } from "@/data/courses";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-brand-800 pt-28 text-white sm:pt-36 lg:pt-40">
-      {/* grid lines */}
       <div
         aria-hidden
         className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:120px_120px]"
       />
 
-      {/* 3D ornaments: scaled with the viewport, but never smaller than 900px wide */}
       <Image
         src="/images/hero/ornaments.png"
         alt=""
@@ -62,7 +60,6 @@ export function Hero() {
         </div>
       </Container>
 
-      {/* Semicircle stage, sized from the design: 1149 x 442 */}
       <div className="relative mx-auto mt-16 min-h-[260px] sm:mt-20 w-full max-w-[1149px] lg:mt-[68px] lg:aspect-[1149/442] lg:min-h-0">
         <div className="absolute bottom-0 left-1/2 aspect-[1149/442] w-[max(100%,600px)] -translate-x-1/2">
           <Image
@@ -84,7 +81,6 @@ export function Hero() {
           />
         </div>
 
-        {/* UI/UX card */}
         <div className="absolute left-[21%] top-[12%] hidden will-change-transform animate-[rise_0.8s_ease-out_0.8s_both,float_6s_ease-in-out_1.6s_infinite] rounded-2xl bg-white px-4 py-3 text-neutral-950 shadow-lg sm:block lg:px-5 lg:py-4">
           <p className="text-sm font-medium lg:text-base">UI/UX Design</p>
           <p className="text-xs text-neutral-500">
@@ -92,7 +88,6 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Learning progress card */}
         <div className="absolute right-2 top-[6%] will-change-transform animate-[rise_0.8s_ease-out_0.95s_both,float_7s_ease-in-out_1.75s_infinite] w-36 rounded-2xl bg-white p-3 text-neutral-950 shadow-lg sm:left-[59%] sm:right-auto sm:top-[15%] sm:w-44 sm:p-4 lg:w-[231px] lg:p-5">
           <p className="text-xs sm:text-sm">Learning Progress</p>
           <p className="mt-1 font-heading text-3xl font-semibold sm:text-4xl lg:text-[56px] lg:leading-tight">
@@ -103,7 +98,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Happy students card */}
         <div className="absolute bottom-4 left-2 will-change-transform animate-[rise_0.8s_ease-out_1.1s_both,float_5.5s_ease-in-out_1.9s_infinite] rounded-2xl bg-white p-3 text-neutral-950 shadow-lg sm:bottom-auto sm:left-[14.5%] sm:top-[57%] sm:p-4 lg:p-5">
           <p className="text-sm font-medium lg:text-base">Happy Students</p>
           <p className="mb-2 flex items-center gap-1 text-xs text-neutral-500">

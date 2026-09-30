@@ -3,11 +3,9 @@ import { cn } from "@/lib/utils";
 type Props = {
   title: string;
   description?: string;
-  /** Heading M (44px) or Heading S (36px) from the type scale */
   size?: "m" | "s";
   className?: string;
   light?: boolean;
-  /** Overrides the default title width cap, e.g. "max-w-none" to keep a title on one line */
   titleClassName?: string;
 };
 

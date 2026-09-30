@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-/** Fades and lifts its children into view the first time they scroll on screen. */
 export function Reveal({
   children,
   className,

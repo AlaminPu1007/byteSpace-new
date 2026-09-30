@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/** Counts up to a value like "12K" or "70+" once it scrolls into view. */
 export function CountUp({ value, duration = 1400 }: { value: string; duration?: number }) {
   const [, prefix = "", digits, suffix = ""] = value.match(/^(\D*)(\d+)(.*)$/) ?? [];
   const target = Number(digits);
